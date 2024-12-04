@@ -14,14 +14,12 @@ from rag_variables import (
     embeddings,
 )
 
-# Load environment variables (API key)
 dotenv.load_dotenv()
 
 typhoon_token = os.getenv("TYPHOON_API_KEY")
-# Set up Typhoon API
 client = OpenAI(
     api_key=typhoon_token,
-    base_url="https://api.opentyphoon.ai/v1"  # URL of Typhoon API
+    base_url="https://api.opentyphoon.ai/v1" 
 )
 
 # Set up Streamlit
@@ -38,21 +36,19 @@ if "session_id" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# การแสดงข้อความที่ค่อยๆ เพิ่มทีละตัว
 def type_effect(message, speed=0.05):
     """แสดงข้อความที่ค่อยๆ เพิ่มทีละตัว"""
     full_message = ""
-    message_placeholder = st.empty()  # Placeholder ที่ใช้แสดงข้อความ
+    message_placeholder = st.empty()
     for i in range(len(message)):
         full_message += message[i]
         message_placeholder.markdown(f"<h1 style='text-align: center; font-size: 4.5em; font-weight: bold;'>{full_message}</h1>", unsafe_allow_html=True)
-        time.sleep(speed)  # รอเวลาเพื่อให้แสดงตัวอักษรแต่ละตัว
+        time.sleep(speed) 
 
-    # หลังจากข้อความทั้งหมดแสดงเสร็จแล้ว รอระยะเวลาและค่อยๆ ทำให้ข้อความหายไปทีละตัว
-    time.sleep(1.5)  # รอเวลาหลังจากข้อความแสดงหมดแล้ว
+    time.sleep(1.5) 
     for i in range(len(message), -1, -1):
         message_placeholder.markdown(f"<h1 style='text-align: center; font-size: 4em; font-weight: bold;'>{message[:i]}</h1>", unsafe_allow_html=True)
-        time.sleep(speed)  # รอเวลาให้ข้อความหายไปทีละตัว
+        time.sleep(speed) 
 
 # เพิ่มการเช็คว่าเคยทำ type_effect แล้วหรือยัง
 if 'type_effect_done' not in st.session_state:
@@ -61,12 +57,10 @@ if 'type_effect_done' not in st.session_state:
 # เช็คว่าถ้ายังไม่เคยทำ type_effect และไม่มีข้อความใน session_state.messages
 if not st.session_state.messages and not st.session_state.type_effect_done:
     type_effect("What can I help with?", speed=0.05)
-    # ตั้งค่าว่า type_effect ทำงานไปแล้ว
     st.session_state.type_effect_done = True
 
 # Function to generate a response using the Typhoon LLM with type effect
 def generate_response(context, chat_history, question, message_placeholder):
-    # Format the chat history correctly
     history = "\n".join([f"{entry['role'].capitalize()}: {entry['content']}" for entry in chat_history])
     prompt = typhoon_prompt.format(context=context, question=question) 
     chat_completion = client.chat.completions.create(
@@ -78,8 +72,8 @@ def generate_response(context, chat_history, question, message_placeholder):
     
     # Display the response with type effect
     for i in range(len(full_response)):
-        message_placeholder.markdown(full_response[:i+1])  # Show text progressively
-        time.sleep(0.02)  # Adjust the speed of the typing effect
+        message_placeholder.markdown(full_response[:i+1])
+        time.sleep(0.02) 
 
     return full_response
 
@@ -91,30 +85,6 @@ def answer_question(user_question, chat_history):
     return response 
 
 # --- Main Chat App ---
-# Display welcome message with type effect
-if "type_effect_done" not in st.session_state:
-    st.session_state.type_effect_done = False
-
-def type_effect(message, speed=0.05):
-    """Display message with typing effect"""
-    full_message = ""
-    message_placeholder = st.empty()  # Placeholder to display the message
-    for i in range(len(message)):
-        full_message += message[i]
-        message_placeholder.markdown(f"<h1 style='text-align: center; font-size: 4.5em; font-weight: bold;'>{full_message}</h1>", unsafe_allow_html=True)
-        time.sleep(speed)
-
-    # Wait after the message is fully displayed
-    time.sleep(1.5)
-    for i in range(len(message), -1, -1):
-        message_placeholder.markdown(f"<h1 style='text-align: center; font-size: 4em; font-weight: bold;'>{message[:i]}</h1>", unsafe_allow_html=True)
-        time.sleep(speed)
-
-# Initial message on first load
-if not st.session_state.messages and not st.session_state.type_effect_done:
-    type_effect("What can I help with?", speed=0.05)
-    st.session_state.type_effect_done = True
-
 # Handle incoming user input and chat history
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
