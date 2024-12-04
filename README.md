@@ -1,12 +1,10 @@
 # Chatbot Tourism Recommendation for Pathum Thani Using RAG 🐧
-[![GitHub issues open](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG?logo=github)](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG/issues)
-[![GitHub issues closed](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG?logo=github)](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG/issues)
-[![GitHub pull requests](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG?logo=github)](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG/pulls)
-[![GitHub last commit](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG?logo=github)](https://github.com/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 
-[![GitHub commit activity yearly](https://img.shields.io/github/commit-activity/y/michaelcurrin/badge-generator)](https://github.com/MichaelCurrin/badge-generator/graphs/commit-activity)
-[![GitHub commit activity monthly](https://img.shields.io/github/commit-activity/m/michaelcurrin/badge-generator)](https://github.com/MichaelCurrin/badge-generator/graphs/commit-activity)
-[![GitHub commit activity weekly](https://img.shields.io/github/commit-activity/w/michaelcurrin/badge-generator)](https://github.com/MichaelCurrin/badge-generator/graphs/commit-activity)
+![Create at](https://img.shields.io/github/created-at/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
+![GitHub last commit](https://img.shields.io/github/last-commit/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
+
+![License](https://img.shields.io/github/license/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
+![Contributors](https://img.shields.io/github/contributors/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 
 <p>This project is designed to provide tourism recommendations for Pathum Thani, Thailand, using Retrieval-Augmented Generation (RAG). 😊<br>
 👇<code><b>TRY THIS</b></code> You can Testing RAG LLM (Typhoon) in My Google Colaboratory<br><br>
@@ -23,7 +21,7 @@
 >   <li>CSV File</li>
 >   <li>JSON File</li>
 ></p>
-><p>And you should setting key in the `.env` file before run the code.</p>
+><p>And you should setting key in the <code>.env</code> file before run the code.</p>
 ><p>You can get the API KEY in 👉 <a href=https://opentyphoon.ai/app/api-key>TYPHOON API</a> </p>
 
 ### To run it locally:
@@ -40,6 +38,7 @@
    $ pip install -r requirements.txt
    ```
 <p><b>Next Step</b>
+   <li><code>Setting API</code> .env</li>
    <li><code>Run All</code> rag_langchain.ipynb</li>
 </p>
 
