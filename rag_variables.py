@@ -22,7 +22,7 @@ from langchain.vectorstores import VectorStore
 from openai import OpenAI
 
 dotenv.load_dotenv()
-os.chdir("C:\\Users\\Korn\\Desktop\\dsi314\\Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG")
+# os.chdir("C:\\Users\\Korn\\Desktop\\dsi314\\Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG")
 
 #HuggingFaceEmbeddings
 model_name = "BAAI/bge-m3"
