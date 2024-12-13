@@ -19,8 +19,8 @@ dotenv.load_dotenv()
 
 # Set up Streamlit
 st.set_page_config(
-    page_title="Typhoon LLM", 
-    page_icon="📚", 
+    page_title="MaPathum", 
+    page_icon="🛴", 
     layout="centered", 
     initial_sidebar_state="expanded"
 )
