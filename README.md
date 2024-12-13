@@ -7,7 +7,13 @@
 ![Contributors](https://img.shields.io/github/contributors/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 
 <p>This project is designed to provide tourism recommendations for Pathum Thani, Thailand, using Retrieval-Augmented Generation (RAG). 😊<br>
-You can Testing RAG LLM (Typhoon) in My Google Colaboratory<br>
+You can Testing on Demo Web<br>
+👇<code><b>TRY WEB</b></code> <br><br>
+<a href='https://pathumthani-tourism-recommend.streamlit.app/' target="_blank">
+   <img alt="Static Badge" src="https://img.shields.io/badge/Demo%20Web-%23?style=for-the-badge&logo=streamlit&color=000">
+<br>
+</a>
+You can Modify RAG LLM (Typhoon 1.5x & LLAMA 3.1) in My Google Colaboratory<br>
 👇<code><b>TRY THIS</b></code> <br><br>
 <a href='https://colab.research.google.com/drive/1wLfRtjCxXKz7qgiACqqggyRNmMxiBa_0#scrollTo=PIFGIn5EJlE6' target="_blank">
    <img alt="Colab" src="https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252"><br>
