@@ -134,7 +134,7 @@ else:
 with st.sidebar:
     st.divider()
     st.write("Tools")
-    st.write("![Python](https://img.shields.io/badge/python-3775A9?logo=pypi&logoColor=ffdd54)" ,"![PyMu](https://img.shields.io/badge/PyPI-3775A9?logo=pypi&logoColor=fff)", "![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=fff)","![FAISS](https://img.shields.io/badge/FAISS-%230467DF?style=plastic&logo=meta&logoColor=%230467DF&color=white)")
+    st.write("![Python](https://img.shields.io/badge/python-3775A9?logo=pypi&logoColor=ffdd54)" ,"![PyMu](https://img.shields.io/badge/PyMuPDF-3775A9?logo=pypi&logoColor=fff)", "![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=fff)","![FAISS](https://img.shields.io/badge/FAISS-%230467DF?style=plastic&logo=meta&logoColor=%230467DF&color=white)")
     st.write("![LangChain](https://img.shields.io/badge/LangChain-%231C3C3C?style=plastic&logo=langchain&logoColor=white&color=%231C3C3C)", "[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/BAAI/bge-m3)")
     st.write("[![typhoon v1.5x 70b instruct](https://img.shields.io/badge/typhoon%20v1.5x%2070b%20instruct-%23000000?style=plastic&logo=ollama&logoColor=white&color=%23726bdf)](https://opentyphoon.ai/)")
 
