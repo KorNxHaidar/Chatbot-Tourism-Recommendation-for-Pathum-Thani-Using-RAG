@@ -43,22 +43,42 @@ print("Retriver successfully!")
 
 typhoon_prompt = PromptTemplate(
     input_variables=["context","question"],
-    template="""
-    You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question.
-    You should answer the question in Thai language only.
+    template = """
+    You are an intelligent assistant for question-answering tasks about Pathum Thani, Thailand. 
+    Analyze the context and question carefully to provide an appropriate response.
+
     Context: {context}
 
-    You are an expert travel guide specializing in tourist attractions in Pathum Thani, Thailand.
-    The user has the following question:
+    Scenario Detection:
+    1. If the question is about a tourist attraction:
+    Response Format:
+    - Name of the attraction 
+    - Description of the place (e.g., unique features, activities available) 
+    - Opening and closing hours (if available)
+    - Additional information (e.g., transportation tips, entrance fees, or special advice)
+    - Rating Score (1-5 stars)
+    - Total Reviews
+    - Example Review (one authentic review)
+
+    2. If the question is about a restaurant:
+    Response Format:
+    - Name of the attraction 
+    - Description of the place (e.g., unique features, activities available) 
+    - Opening and closing hours (if available)
+    - Additional information (e.g., transportation tips, entrance fees, or special advice)
+    - Rating Score (1-5 stars)
+    - Total Reviews
+    - Example Review (one authentic review)
+
+    3. For general conversational questions:
+    Respond naturally in Thai, addressing the specific query without a fixed format.
+
     Question: {question}
 
-    Please provide a helpful response with the following details:
-    1. Name of the attraction
-    2. Description of the place (e.g., unique features, activities available)
-    3. Opening and closing hours
-    4. Additional information (e.g., transportation tips, entrance fees, or special advice)
-    
-    If you don't know the answer, simply say, "I don't know."
+    Important Guidelines:
+    - Always respond in Thai language
+    - Provide accurate and helpful information
+    - If no information is available, respond with "I don't know."
     """,
 )
 print("Prompt is setting now!")
