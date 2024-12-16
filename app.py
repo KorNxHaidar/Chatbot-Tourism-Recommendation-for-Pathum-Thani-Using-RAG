@@ -61,6 +61,7 @@ def generate_response(context, chat_history, question, message_placeholder):
     chat_completion = client.chat.completions.create(
         model="typhoon-v1.5x-70b-instruct",
         messages=[{"role": "user", "content": prompt}],
+        max_tokens=2048,
     )
 
     full_response = chat_completion.choices[0].message.content
