@@ -56,8 +56,10 @@ if not st.session_state.messages and not st.session_state.type_effect_done:
 
 # Function to generate a response using the Typhoon LLM with type effect
 def generate_response(context, chat_history, question, message_placeholder):
-    history = "\n".join([f"{entry['role'].capitalize()}: {entry['content']}" for entry in chat_history])
-    prompt = typhoon_prompt.format(context=context, question=question) 
+    #history = "\n".join([f"{entry['role'].capitalize()}: {entry['content']}" for entry in chat_history])
+    #prompt = typhoon_prompt.format(context=context, question=question) 
+    history = "\n".join([f"User: {entry['role']}\nAssistant: {entry['content']}" for entry in chat_history])
+    prompt = f"{typhoon_prompt}\n\n{history}\n\nContext: {context}\n\nUser: {question}\nAssistant:"
     chat_completion = client.chat.completions.create(
         model="typhoon-v1.5x-70b-instruct",
         messages=[{"role": "user", "content": prompt}],
@@ -77,7 +79,7 @@ def generate_response(context, chat_history, question, message_placeholder):
 def answer_question(user_question, chat_history):
     retrieved_contexts = retriever.get_relevant_documents(user_question)
     context = "\n".join([doc.page_content for doc in retrieved_contexts])
-    response = generate_response(context=context, chat_history=chat_history, question=user_question)
+    response = generate_response(context=context, chat_history=chat_history, question=user_question, message_placeholder=message_placeholder)
     return response 
 
 # --- Side Bar LLM API Tokens ---
@@ -119,23 +121,21 @@ else:
             st.markdown(message["content"])
 
     # Main chat flow where the assistant's response will be shown with type effect
-    if prompt := st.chat_input("Message Typhoon Chat"):
+    if prompt := st.chat_input("Message MaPathum Chat"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
 
         with st.chat_message("assistant"):
             message_placeholder = st.empty()
-            full_response = ""
-
-            messages = [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
-            full_response = generate_response(prompt, messages, prompt, message_placeholder)
+            full_response = answer_question(prompt, st.session_state.messages)
             st.session_state.messages.append({"role": "assistant", "content": full_response})
+            message_placeholder.markdown(full_response)
 
 with st.sidebar:
     st.divider()
     st.write("Tools")
-    st.write("![Python](https://img.shields.io/badge/python-3775A9?logo=pypi&logoColor=ffdd54)" ,"![PyMu](https://img.shields.io/badge/PyMuPDF-3775A9?logo=pypi&logoColor=fff)", "![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=fff)","![FAISS](https://img.shields.io/badge/FAISS-%230467DF?style=plastic&logo=meta&logoColor=%230467DF&color=white)")
+    st.write("![Python](https://img.shields.io/badge/python-3775A9?logo=pypi&logoColor=ffdd54)" ,"![PyMu](https://img.shields.io/badge/PyPI-3775A9?logo=pypi&logoColor=fff)", "![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=fff)","![FAISS](https://img.shields.io/badge/FAISS-%230467DF?style=plastic&logo=meta&logoColor=%230467DF&color=white)")
     st.write("![LangChain](https://img.shields.io/badge/LangChain-%231C3C3C?style=plastic&logo=langchain&logoColor=white&color=%231C3C3C)", "[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=000)](https://huggingface.co/BAAI/bge-m3)")
     st.write("[![typhoon v1.5x 70b instruct](https://img.shields.io/badge/typhoon%20v1.5x%2070b%20instruct-%23000000?style=plastic&logo=ollama&logoColor=white&color=%23726bdf)](https://opentyphoon.ai/)")
 
