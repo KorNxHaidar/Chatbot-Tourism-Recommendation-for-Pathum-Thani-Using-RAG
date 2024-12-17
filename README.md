@@ -5,10 +5,12 @@
 
 ![License](https://img.shields.io/github/license/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 ![Contributors](https://img.shields.io/github/contributors/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
-
-<p>This project is designed to provide tourism recommendations for Pathum Thani, Thailand, using Retrieval-Augmented Generation (RAG). 😊<br>
+<h3>MaPathum LLM</h3>
+<p>
+   MaPathum is a chatbot that can answer questions about tourist attractions that tourists are interested in, addressing the problem by gathering information on tourist spots in both Mueang Pathum Thani and Sam Khok districts. It is the knowledge base for creating an intelligent tourism recommendation system that offers automated conversational responses, helping tourists easily and efficiently find tourist destinations. MaPathum also incorporates Retrieval-Augmented Generation (RAG) to enhance its responses.
+<br>
 You can Testing on Demo Web<br>
-👇<code><b>TRY WEB</b></code> <br><br>
+👇<code><b>TRY MaPathum</b></code> <br><br>
 <a href='https://pathumthani-tourism-recommend.streamlit.app/' target="_blank">
    <img alt="Static Badge" src="https://img.shields.io/badge/Demo%20Web-%23?style=for-the-badge&logo=streamlit&color=000">
 <br>
