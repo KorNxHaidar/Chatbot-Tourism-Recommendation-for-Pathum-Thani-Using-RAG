@@ -41,6 +41,7 @@ print("Vector Store loaded successfully!")
 retriever = vectorstore.as_retriever()
 print("Retriver successfully!")
 
+
 typhoon_prompt = PromptTemplate(
     input_variables=["context", "question"],
     template="""
@@ -50,15 +51,19 @@ typhoon_prompt = PromptTemplate(
     Context: {context}
 
     Scenario Detection:
-    1. If the question is about a Tourist attraction or Cafe or Restaurant (Provide information for at least 3 places):
+    1. If the question is about a Tourist attraction, Cafe, or Restaurant:
     Response Format:
-    - Name of the attraction
-    - Description of the place (e.g., unique features, activities available)
-    - Opening and closing hours 
-    - Additional information (e.g., transportation tips, entrance fees, or special advice)
-    - Rating Score (1-5 stars)
-    - Total Reviews 
-    - Example Review (one authentic review)
+    - Provide information for at least 3 places.
+    - For each place:
+        - Name of the attraction
+        - Description of the place (e.g., unique features, activities available)
+        - Opening and closing hours (if available)
+        - Additional information (e.g., transportation tips, entrance fees, or special advice)
+        - Rating Score (1-5 stars)
+        - Total Review
+        - Review
+        - Website (if available)
+        - Google map (if available)
 
     2. For general conversational questions:
     Respond naturally in Thai or English, addressing the specific query without a fixed format.
