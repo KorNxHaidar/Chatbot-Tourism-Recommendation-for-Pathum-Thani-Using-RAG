@@ -61,4 +61,4 @@ You can Modify RAG LLM (Typhoon 1.5x & LLAMA 3.1) in My Google Colaboratory<br>
    ```
 <p><b>And u can read more details in this Document.</b></p>
 
-[![View Project Docs](https://img.shields.io/badge/View-Project_Docs-green?style=for-the-badge)](https://colab.research.google.com/drive/1wLfRtjCxXKz7qgiACqqggyRNmMxiBa_0#scrollTo=PIFGIn5EJlE6)
+[![View Project Docs](https://img.shields.io/badge/View-Project_Docs-green?style=for-the-badge)](https://drive.google.com/drive/folders/16s4GGiPkHAa-qr6QF1iNNmShm8MU5Xsg)
