@@ -24,7 +24,7 @@ You can Modify RAG LLM (Typhoon 1.5x & LLAMA 3.1) in My Google Colaboratory<br>
 
 > [!IMPORTANT]
 >  <h3>Preparing for RAG</h3>
-><p>Data that used for this Project 👉 <a href='https://drive.usercontent.google.com/download?id=17atteFUrGf2lAxZ7IXhSQeMqAe9e2Cy-&export=download&authuser=0'>Download Here</a>
+><p>Data that used for this Project 👉 <a href='https://drive.google.com/file/d/1S698iebkGxY-vywoPVaF63Ke-A7mDlKh/view?usp=sharing'>Download Here</a>
 ><p>File Format in this Project</p>
 >   <li>PDF File</li>
 >   <li>CSV File</li>
