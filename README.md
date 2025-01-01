@@ -3,7 +3,7 @@
 ![Create at](https://img.shields.io/github/created-at/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 ![GitHub last commit](https://img.shields.io/github/last-commit/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 
-![License](https://img.shields.io/github/license/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
+![GitHub License](https://img.shields.io/github/license/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 ![Contributors](https://img.shields.io/github/contributors/KorNxHaidar/Chatbot-Tourism-Recommendation-for-Pathum-Thani-Using-RAG)
 <h3>MaPathum LLM</h3>
 <p>
